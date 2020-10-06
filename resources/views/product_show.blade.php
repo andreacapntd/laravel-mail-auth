@@ -31,7 +31,7 @@
 
                   @auth
 
-                    <a class="btn btn-primary" href="">EDIT</a>
+                    <a class="btn btn-primary" href="{{route('product_edit', $product -> id)}}">EDIT</a>
                     <a class="btn btn-danger" href="{{route('product_destroy', $product -> id)}}">DELETE</a>
 
                   @else

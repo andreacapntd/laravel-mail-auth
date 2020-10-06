@@ -18,6 +18,30 @@ class LoggedController extends Controller
 
   }
 
+  public function edit($id) {
+
+    $product = Product::findOrFail($id);
+
+    return view('product_edit', compact('product'));
+
+  }
+
+  public function update(Request $request, $id) {
+
+   $data = $request -> all();
+   $product = Product::findOrFail($id);
+   $product -> update($data);
+
+   $user = Auth::user();
+   $action = "UPDATE";
+
+   Mail::to("admin@boolean.it")
+      -> send(new UserAction($user, $product, $action));
+
+   return redirect() -> route('product_home');
+
+  }
+
   public function destroy($id) {
 
     $product = Product::findOrFail($id);

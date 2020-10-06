@@ -31,7 +31,7 @@ class UserAction extends Mailable
      */
     public function build()
     {
-        return $this -> from('user@boolean.it') 
-                     -> view('product_mail');
+        return $this -> from('user@boolean.it')
+                     -> view('mail.product_mail');
     }
 }
