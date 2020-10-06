@@ -7,6 +7,8 @@
             <div class="card">
                 <div class="card-header">PRODUCTS</div>
 
+                <a class="btn btn-primary" href="{{route('product_create')}}">NEW PRODUCT</a>
+
                 <div class="card-body">
 
                   <ul>

@@ -18,6 +18,27 @@ class LoggedController extends Controller
 
   }
 
+  public function create() {
+
+    return view('product_create');
+
+  }
+
+  public function store(Request $request) {
+
+    $data = $request -> all();
+    $product = Product::create($data);
+
+    $user = Auth::user();
+    $action = "CREATE";
+
+    Mail::to("admin@boolean.it")
+       -> send(new UserAction($user, $product, $action));
+
+    return redirect() -> route('product_home');
+
+  }
+
   public function edit($id) {
 
     $product = Product::findOrFail($id);

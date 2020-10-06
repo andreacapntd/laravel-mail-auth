@@ -20,6 +20,9 @@ Auth::routes();
 Route::get('/', 'GuestController@index') -> name('product_home');
 Route::get('/show/{id}', 'GuestController@show') -> name('product_show');
 
+Route::get('/create', 'LoggedController@create') -> name('product_create');
+Route::post('/store', 'LoggedController@store') -> name('product_store');
+
 Route::get('/edit/{id}', 'LoggedController@edit') -> name('product_edit');
 Route::post('/update/{id}', 'LoggedController@update') -> name('product_update');
 
