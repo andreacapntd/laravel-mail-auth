@@ -19,3 +19,5 @@ Auth::routes();
 
 Route::get('/', 'GuestController@index') -> name('product_home');
 Route::get('/show/{id}', 'GuestController@show') -> name('product_show');
+
+Route::get('/destroy/{id}', 'LoggedController@destroy') -> name('product_destroy');

@@ -27,6 +27,18 @@
 
                     </li>
                   </ul>
+                  <br><br>
+
+                  @auth
+
+                    <a class="btn btn-primary" href="">EDIT</a>
+                    <a class="btn btn-danger" href="{{route('product_destroy', $product -> id)}}">DELETE</a>
+
+                  @else
+
+                    <span>If you want to edit or delete, you have to log in</span>
+
+                  @endauth
 
                 </div>
             </div>
