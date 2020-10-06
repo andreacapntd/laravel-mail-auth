@@ -17,4 +17,5 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
-Route::get('/', 'GuestController@index') -> name('home');
+Route::get('/', 'GuestController@index') -> name('product_home');
+Route::get('/show/{id}', 'GuestController@show') -> name('product_show');

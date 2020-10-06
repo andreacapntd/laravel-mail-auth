@@ -5,25 +5,29 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">PRODUCTS</div>
+                <div class="card-header">
+
+                  {{ $product -> name}}
+
+                </div>
 
                 <div class="card-body">
 
                   <ul>
 
-                    @foreach ($products as $product)
+                    <li>
 
-                      <li>
+                      CATEGORY: {{ $product -> category}}
 
-                        <a href="{{ route('product_show', $product -> id) }}">
+                    </li>
+                    <br>
+                    <li>
 
-                          {{ $product -> name}}
+                      PRICE: {{ $product -> price}}
 
-                        </a>
-
-                      </li>
-                    @endforeach
+                    </li>
                   </ul>
+
                 </div>
             </div>
         </div>

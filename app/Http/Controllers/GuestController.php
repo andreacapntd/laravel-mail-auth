@@ -13,6 +13,14 @@ class GuestController extends Controller
     $products = Product::all();
 
     return view('product_home', compact('products'));
+
+  }
+
+  public function show($id) {
+
+    $product = Product::findOrFail($id);
+
+    return view('product_show', compact('product'));
     
   }
 }
